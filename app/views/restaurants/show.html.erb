@@ -12,22 +12,17 @@
 
 <p>
   <strong>phone:</strong>
-  <%= @restaurant.phone %>
+  <%= @restaurant.phone_number %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
-</p>
-
-<p>
-  <strong>rating:</strong>
-  <%= @restaurant.rating %>
-</p>
 
 <p>
   <strong>reviews:</strong>
-  <%= @restaurant.reviews %>
+  <% @restaurant.reviews.each do |r| %>
+  <%= r.content %> (<%= r.rating %>)
+  <% end %>
 </p>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
+<%= link_to "create review", new_restaurant_review_path(@restaurant) %>
+

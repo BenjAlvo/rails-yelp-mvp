@@ -4,10 +4,12 @@
       <tr>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
-        <td><%= restaurant.description %></td>
-        <td><%= restaurant.rating %></td>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <br>
+    <br>
+    <br>
+    <%= link_to 'Create new restaurant', new_restaurant_path %></td>
